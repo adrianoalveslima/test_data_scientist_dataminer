@@ -1,0 +1,210 @@
+Validando modelos com todas as características
+Imprimindo resultados da abordagem por validação cruzada para o <class 'sklearn.dummy.DummyClassifier'>
+C:\Users\adriano\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\dummy.py:131: FutureWarning: The default value of strategy will change from stratified to prior in 0.24.
+  warnings.warn("The default value of strategy will change from "
+F-measure média: 87.41
+Intervalo de f-measure: [85.94, 88.88]
+C:\Users\adriano\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\dummy.py:131: FutureWarning: The default value of strategy will change from stratified to prior in 0.24.
+  warnings.warn("The default value of strategy will change from "
+Selecionando-se as características com SelectKBest(k=5,
+            score_func=<function mutual_info_classif at 0x00000205E62C2820>)
+C:\Users\adriano\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\dummy.py:131: FutureWarning: The default value of strategy will change from stratified to prior in 0.24.
+  warnings.warn("The default value of strategy will change from "
+Tempo do modelo <class 'sklearn.dummy.DummyClassifier'>: 18
+F-measure média: 87.51
+Intervalo de f-measure: [86.30, 88.73]
+Imprimindo resultados da abordagem por validação cruzada para o <class 'sklearn.neighbors._classification.KNeighborsClassifier'>
+F-measure média: 93.21
+Intervalo de f-measure: [91.28, 95.15]
+Selecionando-se as características com SelectKBest(k=5,
+            score_func=<function mutual_info_classif at 0x00000205E62C2820>)
+Tempo do modelo <class 'sklearn.neighbors._classification.KNeighborsClassifier'>: 93
+F-measure média: 93.05
+Intervalo de f-measure: [91.15, 94.95]
+Imprimindo resultados da abordagem por validação cruzada para o <class 'sklearn.tree._classes.DecisionTreeClassifier'>
+F-measure média: 89.68
+Intervalo de f-measure: [86.90, 92.47]
+Selecionando-se as características com RFECV(cv=5, estimator=DecisionTreeClassifier(), scoring='f1_micro')
+Tempo do modelo <class 'sklearn.tree._classes.DecisionTreeClassifier'>: 46
+F-measure média: 92.18
+Intervalo de f-measure: [89.98, 94.38]
+Imprimindo resultados da abordagem por validação cruzada para o <class 'sklearn.naive_bayes.GaussianNB'>
+F-measure média: 93.20
+Intervalo de f-measure: [91.25, 95.15]
+Selecionando-se as características com SelectKBest(k=5,
+            score_func=<function mutual_info_classif at 0x00000205E62C2820>)
+Tempo do modelo <class 'sklearn.naive_bayes.GaussianNB'>: 19
+F-measure média: 93.35
+Intervalo de f-measure: [91.39, 95.31]
+Imprimindo resultados da abordagem por validação cruzada para o <class 'sklearn.ensemble._weight_boosting.AdaBoostClassifier'>
+F-measure média: 93.60
+Intervalo de f-measure: [91.76, 95.44]
+Selecionando-se as características com RFECV(cv=5, estimator=AdaBoostClassifier(n_estimators=100), scoring='f1_micro')
+Tempo do modelo <class 'sklearn.ensemble._weight_boosting.AdaBoostClassifier'>: 439
+F-measure média: 93.60
+Intervalo de f-measure: [91.76, 95.44]
+Imprimindo resultados da abordagem por validação cruzada para o <class 'sklearn.ensemble._forest.RandomForestClassifier'>
+F-measure média: 93.46
+Intervalo de f-measure: [91.51, 95.40]
+Selecionando-se as características com RFECV(cv=5, estimator=RandomForestClassifier(), scoring='f1_micro')
+Tempo do modelo <class 'sklearn.ensemble._forest.RandomForestClassifier'>: 989
+F-measure média: 93.46
+Intervalo de f-measure: [91.52, 95.39]
+Imprimindo resultados da abordagem por validação cruzada para o <class 'sklearn.ensemble._bagging.BaggingClassifier'>
+F-measure média: 93.21
+Intervalo de f-measure: [91.25, 95.16]
+Selecionando-se as características com SelectKBest(k=5,
+            score_func=<function mutual_info_classif at 0x00000205E62C2820>)
+Tempo do modelo <class 'sklearn.ensemble._bagging.BaggingClassifier'>: 76
+F-measure média: 93.34
+Intervalo de f-measure: [91.38, 95.30]
+Imprimindo resultados da abordagem holdout para o <class 'sklearn.dummy.DummyClassifier'>
+C:\Users\adriano\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\dummy.py:131: FutureWarning: The default value of strategy will change from stratified to prior in 0.24.
+  warnings.warn("The default value of strategy will change from "
+F-measure de 87.41%
+C:\Users\adriano\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\dummy.py:131: FutureWarning: The default value of strategy will change from stratified to prior in 0.24.
+  warnings.warn("The default value of strategy will change from "
+Selecionando-se as características com SelectKBest(k=5,
+            score_func=<function mutual_info_classif at 0x00000205E62C2820>)
+C:\Users\adriano\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\dummy.py:131: FutureWarning: The default value of strategy will change from stratified to prior in 0.24.
+  warnings.warn("The default value of strategy will change from "
+F-measure de 87.46%
+Tempo do modelo <class 'sklearn.dummy.DummyClassifier'>: 13
+Imprimindo resultados da abordagem holdout para o <class 'sklearn.neighbors._classification.KNeighborsClassifier'>
+F-measure de 93.29%
+Selecionando-se as características com SelectKBest(k=5,
+            score_func=<function mutual_info_classif at 0x00000205E62C2820>)
+F-measure de 93.15%
+Tempo do modelo <class 'sklearn.neighbors._classification.KNeighborsClassifier'>: 27
+Imprimindo resultados da abordagem holdout para o <class 'sklearn.tree._classes.DecisionTreeClassifier'>
+F-measure de 89.74%
+Selecionando-se as características com RFE(estimator=DecisionTreeClassifier(), n_features_to_select=5)
+F-measure de 89.44%
+Tempo do modelo <class 'sklearn.tree._classes.DecisionTreeClassifier'>: 3
+Imprimindo resultados da abordagem holdout para o <class 'sklearn.naive_bayes.GaussianNB'>
+F-measure de 93.21%
+Selecionando-se as características com SelectKBest(k=5,
+            score_func=<function mutual_info_classif at 0x00000205E62C2820>)
+F-measure de 93.35%
+Tempo do modelo <class 'sklearn.naive_bayes.GaussianNB'>: 12
+Imprimindo resultados da abordagem holdout para o <class 'sklearn.ensemble._weight_boosting.AdaBoostClassifier'>
+F-measure de 93.64%
+Selecionando-se as características com RFE(estimator=AdaBoostClassifier(n_estimators=100), n_features_to_select=5)
+F-measure de 93.33%
+Tempo do modelo <class 'sklearn.ensemble._weight_boosting.AdaBoostClassifier'>: 48
+Imprimindo resultados da abordagem holdout para o <class 'sklearn.ensemble._forest.RandomForestClassifier'>
+F-measure de 93.55%
+Selecionando-se as características com RFE(estimator=RandomForestClassifier(), n_features_to_select=5)
+F-measure de 93.39%
+Tempo do modelo <class 'sklearn.ensemble._forest.RandomForestClassifier'>: 102
+Imprimindo resultados da abordagem holdout para o <class 'sklearn.ensemble._bagging.BaggingClassifier'>
+F-measure de 93.22%
+Selecionando-se as características com SelectKBest(k=5,
+            score_func=<function mutual_info_classif at 0x00000205E62C2820>)
+F-measure de 93.35%
+Tempo do modelo <class 'sklearn.ensemble._bagging.BaggingClassifier'>: 23
+Validando modelos sem as características correlacionadas
+Imprimindo resultados da abordagem por validação cruzada para o <class 'sklearn.dummy.DummyClassifier'>
+C:\Users\adriano\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\dummy.py:131: FutureWarning: The default value of strategy will change from stratified to prior in 0.24.
+  warnings.warn("The default value of strategy will change from "
+F-measure média: 87.46
+Intervalo de f-measure: [86.44, 88.48]
+C:\Users\adriano\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\dummy.py:131: FutureWarning: The default value of strategy will change from stratified to prior in 0.24.
+  warnings.warn("The default value of strategy will change from "
+Selecionando-se as características com SelectKBest(k=5,
+            score_func=<function mutual_info_classif at 0x00000205E62C2820>)
+C:\Users\adriano\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\dummy.py:131: FutureWarning: The default value of strategy will change from stratified to prior in 0.24.
+  warnings.warn("The default value of strategy will change from "
+Tempo do modelo <class 'sklearn.dummy.DummyClassifier'>: 14
+F-measure média: 87.60
+Intervalo de f-measure: [86.31, 88.90]
+Imprimindo resultados da abordagem por validação cruzada para o <class 'sklearn.neighbors._classification.KNeighborsClassifier'>
+F-measure média: 93.25
+Intervalo de f-measure: [91.22, 95.28]
+Selecionando-se as características com SelectKBest(k=5,
+            score_func=<function mutual_info_classif at 0x00000205E62C2820>)
+Tempo do modelo <class 'sklearn.neighbors._classification.KNeighborsClassifier'>: 62
+F-measure média: 93.01
+Intervalo de f-measure: [90.97, 95.05]
+Imprimindo resultados da abordagem por validação cruzada para o <class 'sklearn.tree._classes.DecisionTreeClassifier'>
+F-measure média: 89.16
+Intervalo de f-measure: [86.01, 92.30]
+Selecionando-se as características com RFECV(cv=5, estimator=DecisionTreeClassifier(), scoring='f1_micro')
+Tempo do modelo <class 'sklearn.tree._classes.DecisionTreeClassifier'>: 31
+F-measure média: 92.18
+Intervalo de f-measure: [89.98, 94.38]
+Imprimindo resultados da abordagem por validação cruzada para o <class 'sklearn.naive_bayes.GaussianNB'>
+F-measure média: 92.40
+Intervalo de f-measure: [89.98, 94.83]
+Selecionando-se as características com SelectKBest(k=5,
+            score_func=<function mutual_info_classif at 0x00000205E62C2820>)
+Tempo do modelo <class 'sklearn.naive_bayes.GaussianNB'>: 15
+F-measure média: 93.20
+Intervalo de f-measure: [91.17, 95.23]
+Imprimindo resultados da abordagem por validação cruzada para o <class 'sklearn.ensemble._weight_boosting.AdaBoostClassifier'>
+F-measure média: 93.46
+Intervalo de f-measure: [91.49, 95.43]
+Selecionando-se as características com RFECV(cv=5, estimator=AdaBoostClassifier(n_estimators=100), scoring='f1_micro')
+Tempo do modelo <class 'sklearn.ensemble._weight_boosting.AdaBoostClassifier'>: 323
+F-measure média: 93.47
+Intervalo de f-measure: [91.41, 95.52]
+Imprimindo resultados da abordagem por validação cruzada para o <class 'sklearn.ensemble._forest.RandomForestClassifier'>
+F-measure média: 93.43
+Intervalo de f-measure: [91.57, 95.29]
+Selecionando-se as características com RFECV(cv=5, estimator=RandomForestClassifier(), scoring='f1_micro')
+Tempo do modelo <class 'sklearn.ensemble._forest.RandomForestClassifier'>: 693
+F-measure média: 93.43
+Intervalo de f-measure: [91.54, 95.33]
+Imprimindo resultados da abordagem por validação cruzada para o <class 'sklearn.ensemble._bagging.BaggingClassifier'>
+F-measure média: 92.45
+Intervalo de f-measure: [90.05, 94.86]
+Selecionando-se as características com SelectKBest(k=5,
+            score_func=<function mutual_info_classif at 0x00000205E62C2820>)
+Tempo do modelo <class 'sklearn.ensemble._bagging.BaggingClassifier'>: 56
+F-measure média: 92.90
+Intervalo de f-measure: [90.94, 94.86]
+Imprimindo resultados da abordagem holdout para o <class 'sklearn.dummy.DummyClassifier'>
+C:\Users\adriano\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\dummy.py:131: FutureWarning: The default value of strategy will change from stratified to prior in 0.24.
+  warnings.warn("The default value of strategy will change from "
+F-measure de 87.72%
+C:\Users\adriano\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\dummy.py:131: FutureWarning: The default value of strategy will change from stratified to prior in 0.24.
+  warnings.warn("The default value of strategy will change from "
+Selecionando-se as características com SelectKBest(k=5,
+            score_func=<function mutual_info_classif at 0x00000205E62C2820>)
+C:\Users\adriano\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\dummy.py:131: FutureWarning: The default value of strategy will change from stratified to prior in 0.24.
+  warnings.warn("The default value of strategy will change from "
+F-measure de 87.58%
+Tempo do modelo <class 'sklearn.dummy.DummyClassifier'>: 8
+Imprimindo resultados da abordagem holdout para o <class 'sklearn.neighbors._classification.KNeighborsClassifier'>
+F-measure de 93.22%
+Selecionando-se as características com SelectKBest(k=5,
+            score_func=<function mutual_info_classif at 0x00000205E62C2820>)
+F-measure de 93.10%
+Tempo do modelo <class 'sklearn.neighbors._classification.KNeighborsClassifier'>: 19
+Imprimindo resultados da abordagem holdout para o <class 'sklearn.tree._classes.DecisionTreeClassifier'>
+F-measure de 89.32%
+Selecionando-se as características com RFE(estimator=DecisionTreeClassifier(), n_features_to_select=5)
+F-measure de 89.08%
+Tempo do modelo <class 'sklearn.tree._classes.DecisionTreeClassifier'>: 3
+Imprimindo resultados da abordagem holdout para o <class 'sklearn.naive_bayes.GaussianNB'>
+F-measure de 92.79%
+Selecionando-se as características com SelectKBest(k=5,
+            score_func=<function mutual_info_classif at 0x00000205E62C2820>)
+F-measure de 92.90%
+Tempo do modelo <class 'sklearn.naive_bayes.GaussianNB'>: 9
+Imprimindo resultados da abordagem holdout para o <class 'sklearn.ensemble._weight_boosting.AdaBoostClassifier'>
+F-measure de 93.42%
+Selecionando-se as características com RFE(estimator=AdaBoostClassifier(n_estimators=100), n_features_to_select=5)
+F-measure de 93.34%
+Tempo do modelo <class 'sklearn.ensemble._weight_boosting.AdaBoostClassifier'>: 32
+Imprimindo resultados da abordagem holdout para o <class 'sklearn.ensemble._forest.RandomForestClassifier'>
+F-measure de 93.39%
+Selecionando-se as características com RFE(estimator=RandomForestClassifier(), n_features_to_select=5)
+F-measure de 93.27%
+Tempo do modelo <class 'sklearn.ensemble._forest.RandomForestClassifier'>: 66
+Imprimindo resultados da abordagem holdout para o <class 'sklearn.ensemble._bagging.BaggingClassifier'>
+F-measure de 92.79%
+Selecionando-se as características com SelectKBest(k=5,
+            score_func=<function mutual_info_classif at 0x00000205E62C2820>)
+F-measure de 93.23%
+Tempo do modelo <class 'sklearn.ensemble._bagging.BaggingClassifier'>: 20
