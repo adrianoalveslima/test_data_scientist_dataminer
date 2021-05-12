@@ -14,14 +14,15 @@ from sklearn.manifold import TSNE
 from sklearn.feature_selection import RFE, RFECV
 from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import mutual_info_classif
+from imblearn.under_sampling import RandomUnderSampler
 
 
 # Calculando correlação e criando figura
 def calc_corr_fig(standardized_values):
     plt.figure(figsize=(17, 15))
-    matriz_correlacao = standardized_values.corr()
+    matrix_correlation = standardized_values.corr()
 
-    sns.heatmap(matriz_correlacao, annot=True, fmt=".1f")
+    sns.heatmap(matrix_correlation, annot=True, fmt=".1f")
     plt.show()
 
 
@@ -123,6 +124,13 @@ def main():
     train_x_without_corr_feat, test_x_without_corr_feat, train_y_without_corr_feat, test_y_without_corr_feat = train_test_split(
         x_without_corr_feat, y, test_size=0.3, stratify=y)
 
+    undersample = RandomUnderSampler(sampling_strategy='majority')
+
+    X_without_corr_feat_under, y_without_corr_feat_under = undersample.fit_resample(x_without_corr_feat, y)
+    x_under, y_under = undersample.fit_resample(x, y)
+    train_x_under, train_y_under = undersample.fit_resample(train_x, train_y)
+    train_x_without_corr_feat_under, train_y_without_corr_feat_under = undersample.fit_resample(train_x_without_corr_feat, train_y_without_corr_feat)
+
     #tsne_scatterplot(x_without_corr_feat, y)
 
     # Os classificadores validados foram escolhidos de acordo com o aspecto da base de dados:
@@ -134,17 +142,17 @@ def main():
 
     # Criando aleatoridade nos grupos de folds (para evitar repetição). Abordagem mais adequada para bases desbalanceadas
     # https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GroupKFold.html#sklearn.model_selection.GroupKFold
-    x['idade_r'] = x.idade + np.random.randint(-2, 3, size=110000)
-    x.idade_r = x.idade + abs(x.idade.min()) + 1
+    x_under['idade_r'] = x_under.idade + np.random.randint(-2, 3, size=14662)
+    x_under.idade_r = x_under.idade + abs(x_under.idade.min()) + 1
 
     print("Validando modelos com todas as características")
-    validate_models_holdout(train_x, train_y, test_x, test_y, models, k_size)
-    validate_models_cv(x, y, x.idade_r, models, k_size)
+    validate_models_cv(x_under, y_under, x_under.idade_r, models, k_size)
+    validate_models_holdout(train_x_under, train_y_under, test_x, test_y, models, k_size)
 
     print("Validando modelos sem as características correlacionadas")
-    validate_models_holdout(train_x_without_corr_feat, train_y_without_corr_feat,
+    validate_models_cv(X_without_corr_feat_under, y_without_corr_feat_under, x_under.idade_r, models, k_size)
+    validate_models_holdout(train_x_without_corr_feat_under, train_y_without_corr_feat_under,
                             test_x_without_corr_feat, test_y_without_corr_feat, models, k_size)
-    validate_models_cv(x_without_corr_feat, y, x.idade_r, models, k_size)
 
 
 if __name__ == "__main__":

@@ -1,10 +1,11 @@
 from operator import index
 from joblib import dump, load
-from sklearn.ensemble import AdaBoostClassifier
+from sklearn.ensemble import RandomForestClassifier
 import numpy as np
 from util import read_dataset, input_data
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
+from imblearn.under_sampling import RandomUnderSampler
 
 
 def main():
@@ -33,15 +34,20 @@ def main():
 
     test_x = standardized_values_test
 
-    #model = AdaBoostClassifier(n_estimators=100)
-    #model.fit(train_x, train_y)
+    undersample = RandomUnderSampler(sampling_strategy='majority')
+
+    model = RandomForestClassifier()
+
+    X_under, y_under = undersample.fit_resample(train_x, train_y)
+
+    model.fit(X_under, y_under)
 
     filename = 'test_data_scientist_dataminer/modelo-adaboost.joblib'
-    #dump(model, filename)
+    dump(model, filename)
 
     loaded_model = load(filename)
 
-    predictions = loaded_model.predict(test_x)
+    predictions = model.predict(test_x)
 
     dataset_test_raw_df = read_dataset("https://raw.githubusercontent.com/dataminerdbm/test_data_scientist/main/teste.csv")
     dataset_test_raw_df['inadimplente'] = predictions
