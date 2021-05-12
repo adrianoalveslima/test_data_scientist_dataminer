@@ -23,6 +23,6 @@ Percebe-se que há correlação (método de pearson) entre as características '
 
 Foram executadas validações eliminando-se as características correlacionadas e também selecionando as 5 (e outras combinações com 2, 6, 7). Apesar de não haver perca considerável, optou-se por utilizar todos os atributos, tendo em vista que o melhor desempenho foi atingido com o RandomForest (em holdout e validação cruzada), o qual utiliza árvores de decisão como estimador base (o qual faz uma seleção de características naturalmente). Ou seja, para a melhor abordagem, não foi considerada a etapa de seleção de características.
 
-Validou-se também seleção dinâmica de classificadores ou de ensembles com pool (GaussinaNB, DecisionTree e KNN e utilizando todos os classificadores e ensembles da configuração) com diferentes abordagens (KNORA-U, KNORA-E, MCB, METADES). No entanto, os resultados não foram promissores (não ultrapassou 93.60% de F-measure) e não foram efetuados testes mais profundos.
+Validou-se também seleção dinâmica de classificadores ou de ensembles com pool (GaussinaNB, DecisionTree e KNN e utilizando todos os classificadores e ensembles da configuração) com diferentes abordagens (KNORA-U, KNORA-E, MCB, METADES). No entanto, os resultados não foram promissores e não foram efetuados testes mais profundos.
 
 O arquivo final com o resultado da avaliação está sob o nome 'teste.csv' e possui a coluna 'inadimplente' com a predição realizada a partir do modelo criado.
